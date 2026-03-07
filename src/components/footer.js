@@ -1,6 +1,7 @@
 "use client";
 import FaqSection from "@/home.js/faqs";
 import React, { useEffect, useRef } from "react";
+import Glow from "./layout/bg-glow";
 
 export default function Footer() {
   const mainRef = useRef(null);
@@ -60,17 +61,7 @@ export default function Footer() {
         ref={footerRef}
         className="    text-white pt-10 pb-6 px-6 md:px-16 relative z-0 w-full"
       >
-        <div
-          className="absolute top-0 left-[20%]  border-0 h-[11%]
-  rounded-full
-  rotate-[-25deg]
-  origin-center
-     bg-none
-  shadow-[0_0_300px_302px_rgba(255,160,58,0.3)]
-  opacity-0
-  z-1
-  [animation:fadeInCustom_1s_ease_0s_1,bgGradientMove_7s_linear_1s_infinite]"
-        ></div>
+        <Glow className="top-0 left-[20%]  w-0"></Glow>
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
           {/* Left Logo */}

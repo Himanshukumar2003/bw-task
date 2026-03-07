@@ -76,7 +76,7 @@ export default function FaqSection() {
 
         {/* Accordion */}
         <Accordion type="single" collapsible className="w-full space-y-4">
-          <div className="grid gap-5 grid-cols-2">
+          <div className="grid gap-5 md:grid-cols-2">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}

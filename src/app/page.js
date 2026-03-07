@@ -4,26 +4,16 @@ import Features from "@/home.js/feachers";
 import CardsSection from "@/home.js/scroll-card-stack";
 import FeaturesSectionDemo from "@/home.js/features-section-demo-3";
 import CategorySection from "@/home.js/Industry";
-import FaqSection from "@/home.js/faqs";
-import SplashCursor from "@/components/SplashCursor";
-import ScrollReveal from "@/components/ScrollReveal";
+
 import Heading from "@/components/layout/heading";
-2;
+import StickyGridScroll from "@/components/sticky-grid-scroll";
+import Glow from "@/components/layout/bg-glow";
+
 export default function MacbookScrollDemo() {
   return (
     <>
       <div className="w-full relative overflow-hidden bg-white dark:bg-[#0B0B0F] ">
-        <div
-          className="absolute top-0 right-25  border-0 h-[11%]
-  rounded-full
-  rotate-[-25deg]
-  origin-center
-     bg-none
-  shadow-[0_0_300px_302px_rgba(255,160,58,0.3)]
-  opacity-0
-  z-1
-  [animation:fadeInCustom_1s_ease_0s_1,bgGradientMove_7s_linear_1s_infinite]"
-        ></div>
+        <Glow></Glow>
         <MacbookScroll
           title={<span></span>}
           src={`/hero.png`}
@@ -47,9 +37,9 @@ export default function MacbookScrollDemo() {
       <div className="  relative  h-[490vh]">
         <CardsSection />
       </div>
-
+      <StickyGridScroll></StickyGridScroll>
       <div
-        className="py-8  overflow-hidden relative relative
+        className="py-8  overflow-hidden relative 
 "
       >
         <FeaturesSectionDemo></FeaturesSectionDemo>

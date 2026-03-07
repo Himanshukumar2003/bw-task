@@ -2,6 +2,7 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { GlowingEffect } from "./glowing-effect";
 
 const BentoGrid = ({ children, className, ...props }) => {
   return (
@@ -30,7 +31,7 @@ const BentoCard = ({
   <div
     key={name}
     className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl",
+      "group relative  border col-span-3 flex flex-col justify-between overflow-hidden rounded-xl",
       // light styles
       "bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
       // dark styles
@@ -39,6 +40,14 @@ const BentoCard = ({
     )}
     {...props}
   >
+    <GlowingEffect
+      spread={40}
+      glow={true}
+      disabled={false}
+      
+      proximity={64}
+      inactiveZone={0.01}
+    />
     <div>{background}</div>
     <div className="p-4">
       <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 lg:group-hover:-translate-y-10">
