@@ -190,12 +190,12 @@ export default function StickyGridScroll() {
 
   return (
     <>
-      <section className="py-12  relative  border-b">
+      <section className="py-12  relative  ">
         <div className="block block--intro">
-          <figure className="media   max-w-7xl mx-auto ">
+          <figure className="media  bg-dark  w-full ">
             <Image
               alt="feachers"
-              className=" media__image rounded-2xl object-contain"
+              className="  rounded-2xl  mx-auto max-w-7xl object-contain"
               src="/img/main-img.png"
               width={2000}
               height={2000}
@@ -203,8 +203,8 @@ export default function StickyGridScroll() {
           </figure>
         </div>
 
-        <div className="block block--main relative" ref={blockRef}>
-          <div className="block__wrapper">
+        <div className="block block--main   " ref={blockRef}>
+          <div className="block__wrapper ">
             <div className="content">
               <Heading
                 heading="We Build  Modern"
@@ -212,15 +212,16 @@ export default function StickyGridScroll() {
                 pera="From Image generation to video generation, Everything AI has APIs for literally everything. It can even create this website copy for you."
               />
               <Button className="">COntact us</Button>
-              <Glow></Glow>
             </div>
-
+            <Glow></Glow>
             <div className="gallery">
               <ul className="gallery__grid">
                 {images.map((num) => (
                   <li key={num} className="gallery__item">
-                    <img
-                      className="gallery__image   object-contain"
+                    <Image
+                      width={500}
+                      height={500}
+                      className="gallery__image  relative z-3  object-contain"
                       src="/img/2.png"
                       alt={`Image ${num}`}
                     />

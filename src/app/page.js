@@ -9,7 +9,7 @@ import Heading from "@/components/layout/heading";
 import StickyGridScroll from "@/components/sticky-grid-scroll";
 import Glow from "@/components/layout/bg-glow";
 
-export default function MacbookScrollDemo() {
+export default function page() {
   return (
     <>
       <div className="w-full relative overflow-hidden bg-white dark:bg-[#0B0B0F] ">

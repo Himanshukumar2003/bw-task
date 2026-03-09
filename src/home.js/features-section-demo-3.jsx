@@ -4,12 +4,8 @@ import { cn } from "@/lib/utils";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import { ShineBorder } from "../components/ui/shine-border";
 import Heading from "../components/layout/heading";
-import { useTheme } from "next-themes";
-import { BorderBeam } from "@/components/ui/border-beam";
-
 export default function FeaturesSectionDemo() {
   const features = [
     {
@@ -48,10 +44,9 @@ export default function FeaturesSectionDemo() {
         "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
     },
   ];
-  const theme = useTheme();
 
   return (
-    <div className="relative z-20 mx-auto overflow-hidden max-w-7xl mx-auto py-12 ">
+    <div className="relative z-20  overflow-hidden max-w-7xl mx-auto py-12 ">
       <Heading
         heading="We Build  Modern"
         highliter="Web Experiences"
