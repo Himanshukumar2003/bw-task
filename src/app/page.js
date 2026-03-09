@@ -21,7 +21,6 @@ export default function page() {
           className="z-3"
         />
       </div>
-
       <div className="bg-card relative">
         <div className=""></div>
         <div className="  container  max-w-7xl mx-auto mt-2 px-4  py-12">
@@ -33,18 +32,18 @@ export default function page() {
           <Features />
         </div>
       </div>
-
       <div className="  relative  h-[490vh]">
         <CardsSection />
       </div>
+
       <StickyGridScroll></StickyGridScroll>
+
       <div
         className="py-8  overflow-hidden relative 
 "
       >
         <FeaturesSectionDemo></FeaturesSectionDemo>
       </div>
-
       <CategorySection></CategorySection>
     </>
   );

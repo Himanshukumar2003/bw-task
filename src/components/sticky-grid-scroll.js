@@ -106,6 +106,7 @@ export default function StickyGridScroll() {
               y: dy * (fromTop ? -1 : 1),
               stagger: { each: 0.06, from: fromTop ? "end" : "start" },
               ease: "power1.inOut",
+              duration: 1,
             },
             "grid-reveal"
           );
@@ -195,7 +196,7 @@ export default function StickyGridScroll() {
           <figure className="media  bg-dark  w-full ">
             <Image
               alt="feachers"
-              className="  rounded-2xl  mx-auto max-w-7xl object-contain"
+              className=" media__image "
               src="/img/main-img.png"
               width={2000}
               height={2000}
@@ -211,7 +212,7 @@ export default function StickyGridScroll() {
                 highliter="Web Experiences"
                 pera="From Image generation to video generation, Everything AI has APIs for literally everything. It can even create this website copy for you."
               />
-              <Button className="">COntact us</Button>
+              <Button className="">Contact us</Button>
             </div>
             <Glow></Glow>
             <div className="gallery">

@@ -143,7 +143,7 @@ export default function StackingCardsDemo() {
               </div>
 
               {/* Image Section */}
-              <div className="w-full sm:w-1/2 flex items-center justify-center py-6 sm:py-0 relative z-10">
+              <div className="w-full sm:w-1/2  hidden md:flex items-center justify-center py-6 sm:py-0 relative z-10">
                 <div
                   className="w-full h-48 sm:h-4/5 rounded-2xl relative overflow-hidden"
                   style={{
