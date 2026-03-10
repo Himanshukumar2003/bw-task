@@ -27,15 +27,10 @@ import { MorphingText } from "./morphing-text";
 
 export const MacbookScroll = ({ src, showGradient, title, badge }) => {
   const texts = [
-    "Hello",
-    "Morphing",
-    "Text",
-    "Animation",
-    "React",
-    "Component",
-    "Smooth",
-    "Transition",
-    "Engaging",
+    " Create Tasks",
+    " Automate Tasks",
+    "track team performance",
+    "manage projects",
   ];
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -90,19 +85,19 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
         className="mb-10 md:mb-30 text-center px-4 w-full"
       >
         {/* Top Badge */}
-        <div className="mb-4 md:mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm text-gray-300 backdrop-blur-md">
+        <div className="mb-4 md:mb-10 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm text-gray-300 backdrop-blur-md">
           <span className="h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-accent" />
           We've protected 100+ Businesses from Cyber Threats
         </div>
 
         {/* Main Heading */}
-        <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-light tracking-tight text-white">
-          Climb Every Hour, Win <br />
-          <MorphingText className="text-accent" texts={texts} />
+        <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl lg:text-6xl font-light tracking-tight text-white">
+          Everything You Need to Manage Your Business
+          <MorphingText className="text-accent  capitalize" texts={texts} />
         </h1>
 
         {/* Subtext */}
-        <p className="mx-auto mt-4 md:mt-6 max-w-xs sm:max-w-sm md:max-w-xl text-gray-400 text-sm md:text-lg px-4">
+        <p className="mx-auto mt-2 max-w-xs sm:max-w-sm md:max-w-xl text-gray-400 text-sm md:text-lg px-4">
           Take control of your time, stay focused, and achieve more with every
           minute tracked.
         </p>

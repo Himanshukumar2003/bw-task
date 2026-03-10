@@ -10,39 +10,46 @@ import StackingCards, {
 const cards = [
   {
     accent: "#f97316",
-    title: "The Guiding Light",
+    title: "Simplify Even the Most Complex Projects",
     description:
-      "Lighthouses have stood as beacons of hope for centuries, guiding sailors safely through treacherous waters. Their glowing light and towering presence serve as a reminder of humanity's connection to the sea.",
-    image: "/hero.png",
+      "Organize projects, track tasks, and monitor team workloads in one place. Quickly spot delays and understand where your attention is needed most.",
+    image: "/img/feachers2.png",
   },
   {
     accent: "#3b82f6",
-    title: "Life Beneath the Waves",
+    title: "Smart Reminders That Keep Teams on Track",
     description:
-      "From shimmering schools of fish to solitary hunters, the ocean is home to an incredible variety of marine life. Each species plays a vital role in maintaining the balance of underwater ecosystems.",
-    image: "/hero.png",
+      "Automatically send notifications for task assignments, delays, and completions via WhatsApp and in-app alerts — ensuring deadlines are always met.",
+    image: "/img/feachers1.png",
   },
   {
     accent: "#ef4444",
-    title: "Alone on the Open Sea",
+    title: "Workflow Automation - Automate recurring tasks",
     description:
-      "Drifting across the endless horizon, traveling alone on the sea is a test of courage and resilience.",
-    image: "/hero.png",
+      "Automate recurring tasks, set daily , weekly or Monthly frequencies, trigger automatic reminders, and organize tasks within projects without manual follow-ups.",
+    image: "/img/feachers3.png",
   },
   {
-    accent: "#10b981",
-    title: "The Art of Sailing",
+    accent: "#10b981", // green
+    title: "Task Updates & Team Communication",
     description:
-      "Harnessing the power of the wind, sailing is both a skill and an adventure.",
-    image: "/hero.png",
+      "Share updates, add comments, and attach links directly to tasks so everyone stays informed and aligned in real time. Keep your team informed with updates, comments, and shared links — all organized within each task.",
+    image: "/img/feachers4.png",
   },
   {
-    accent: "#a855f7",
-    title: "The Era of Whaling",
+    accent: "#8b5cf6", // purple
+    title: "Manage Your Entire Team from One Dashboard",
     description:
-      "Once a thriving industry, whale hunting shaped economies and cultures across the world.",
-    image: "/hero.png",
+      "Add users, assign roles, monitor account activity, and manage your entire team from a single centralized workspace.",
+    image: "/img/feachers5.png",
   },
+  // {
+  //   accent: "#06b6d4", // cyan
+  //   title: "Real-Time Performance Insights",
+  //   description:
+  //     "Track project progress, monitor team productivity, and make better decisions with real-time dashboards and analytics.",
+  //   image: "/img/feachers6.png",
+  // },
 ];
 
 export default function StackingCardsDemo() {
@@ -109,7 +116,7 @@ export default function StackingCardsDemo() {
                 >
                   {description}
                 </p>
-                <div className="mt-8">
+                {/* <div className="mt-8">
                   <button
                     className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200"
                     style={{
@@ -139,22 +146,16 @@ export default function StackingCardsDemo() {
                       />
                     </svg>
                   </button>
-                </div>
+                </div> */}
               </div>
 
               {/* Image Section */}
               <div className="w-full sm:w-1/2  hidden md:flex items-center justify-center py-6 sm:py-0 relative z-10">
-                <div
-                  className="w-full h-48 sm:h-4/5 rounded-2xl relative overflow-hidden"
-                  style={{
-                    boxShadow:
-                      "0 0 0 1px rgba(255,255,255,0.07), 0 20px 40px rgba(0,0,0,0.6)",
-                  }}
-                >
+                <div className="w-full h-48 sm:h-4/5 rounded-2xl relative overflow-hidden">
                   <Image
                     src={image}
                     alt={title}
-                    className="object-cover  transition-transform duration-700"
+                    className="  object-contain  transition-transform duration-700"
                     fill
                   />
                 </div>

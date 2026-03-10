@@ -1,75 +1,81 @@
-import Heading from "@/components/layout/heading";
-import TiltedCard from "@/components/TiltedCard";
+"use client";
 
-const CategorySection = () => {
-  const categories = [
-    {
-      title: "Hospitality",
-      image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
-    },
-    {
-      title: "Education",
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644",
-    },
-    {
-      title: "Health Care",
-      image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3",
-    },
-    {
-      title: "Retail Store",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
-    },
-    // {
-    //   title: "Events",
-    //   image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
-    // },
-    // {
-    //   title: "Corporates",
-    //   image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
-    // },
-  ];
+import Heading from "@/components/layout/heading";
+import Section from "@/components/layout/section";
+import { motion } from "framer-motion";
+import {
+  Factory,
+  Truck,
+  Cpu,
+  ShoppingCart,
+  HeartPulse,
+  Banknote,
+} from "lucide-react";
+
+const industries = [
+  { name: "Manufacturing", icon: Factory },
+  { name: "Logistics", icon: Truck },
+  { name: "Technology", icon: Cpu },
+  { name: "E-Commerce", icon: ShoppingCart },
+  { name: "Healthcare", icon: HeartPulse },
+  { name: "Finance", icon: Banknote },
+];
+
+function Industry() {
   return (
-    <div className="w-full py-8 px-6 max-w-7xl mx-auto">
+    <Section className="">
       <Heading
-        heading="  Packed with "
-        highliter="thousands of features"
-        pera="  From Image generation to video generation, Everything AI has APIs for
-          literally everything. It can even create this website copy for you."
+        className="mb-20"
+        heading="Built for Every Team"
+        highliter="Every Industry"
+        pera="From Image generation to video generation, Everything AI has APIs for literally everything. It can even create this website copy for you."
+      />
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, oklch(70.755% 0.19742 46.444 / 0.12), transparent 70%)",
+        }}
       />
 
-      <div className="px-8 mb-10">
-        <h4 className="mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight text-black lg:text-5xl lg:leading-tight dark:text-white"></h4>
+      <div className="relative h-72 w-full flex items-center justify-center ">
+        {industries.map(function (industry, i) {
+          const Icon = industry.icon;
+          const total = industries.length;
+          const angle = (i - (total - 1) / 2) * 14;
+          const offsetX = (i - (total - 1) / 2) * 85;
 
-        <p className="mx-auto my-4 max-w-2xl text-center text-sm font-normal text-neutral-500 lg:text-base dark:text-neutral-300"></p>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center">
-        {categories.map(function (item, index) {
           return (
-            <TiltedCard
-              key={index}
-              imageSrc={item.image}
-              altText={item.title}
-              captionText={item.title}
-              containerHeight="300px"
-              containerWidth="100%"
-              imageHeight="300px"
-              imageWidth="100%"
-              rotateAmplitude={12}
-              scaleOnHover={1.05}
-              showMobileWarning={false}
-              showTooltip
-              displayOverlayContent
-              overlayContent={
-                <p className="text-white text-xl font-semibold pt-0 text-center tilted-card-demo-text bg-black/40 px-4 rounded-xl bg-blur-sm ">
-                  {item.title}
-                </p>
-              }
-            />
+            <motion.div
+              key={industry.name}
+              className="absolute w-44 h-60 rounded-2xl border border-border bg-card/80 backdrop-blur-md flex flex-col items-center justify-center gap-4 cursor-pointer group"
+              style={{
+                zIndex: i,
+                transformOrigin: "bottom center",
+              }}
+              initial={{ rotate: angle, x: offsetX }}
+              whileHover={{
+                rotate: 0,
+                y: -40,
+                scale: 1.1,
+                zIndex: 20,
+                boxShadow: "0 0 40px oklch(70.755% 0.19742 46.444 / 0.35)",
+              }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            >
+              <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <Icon className="w-6 h-6 text-accent" strokeWidth={1.5} />
+              </div>
+
+              <span className="text-sm font-medium text-foreground">
+                {industry.name}
+              </span>
+            </motion.div>
           );
         })}
       </div>
-    </div>
+    </Section>
   );
-};
+}
 
-export default CategorySection;
+export default Industry;

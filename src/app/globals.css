@@ -53,7 +53,11 @@
     }
   to {
     transform: translateX(calc(-100% - var(--gap)));
-    }
+    -webkit-transform: translateX(calc(-100% - var(--gap)));
+    -moz-transform: translateX(calc(-100% - var(--gap)));
+    -ms-transform: translateX(calc(-100% - var(--gap)));
+    -o-transform: translateX(calc(-100% - var(--gap)));
+}
   }
   @keyframes marquee-vertical {
   from {
@@ -61,7 +65,11 @@
     }
   to {
     transform: translateY(calc(-100% - var(--gap)));
-    }
+    -webkit-transform: translateY(calc(-100% - var(--gap)));
+    -moz-transform: translateY(calc(-100% - var(--gap)));
+    -ms-transform: translateY(calc(-100% - var(--gap)));
+    -o-transform: translateY(calc(-100% - var(--gap)));
+}
   }
   --animate-shine: shine var(--duration) infinite linear
 ;
@@ -206,7 +214,8 @@
       margin: 0 0 0 -50px;
       background: var(--color-link, var(--primary));
       animation: loaderAnim 1.5s ease-in-out infinite alternate forwards;
-    }
+      -webkit-animation: loaderAnim 1.5s ease-in-out infinite alternate forwards;
+}
   }
 }
 
@@ -429,3 +438,83 @@
   will-change: transform;
 }
 
+
+
+.loader-mask {
+  mask: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 6px,
+    black 7px,
+    black 8px
+  );
+}
+
+.loader-animation {
+  width: 200px;
+  height: 120px;
+  animation: transformAnimation 2s infinite alternate,
+    opacityAnimation 4s infinite;
+  animation-timing-function: cubic-bezier(0.6, 0.8, 0.5, 1);
+
+  background-image: radial-gradient(circle at 50% 50%, #ff0 0%, transparent 50%),
+    radial-gradient(circle at 45% 45%, #f00 0%, transparent 45%),
+    radial-gradient(circle at 55% 55%, #0ff 0%, transparent 45%),
+    radial-gradient(circle at 45% 55%, #0f0 0%, transparent 45%),
+    radial-gradient(circle at 55% 45%, #00f 0%, transparent 45%);
+
+  mask: radial-gradient(
+    circle at 50% 50%,
+    transparent 0%,
+    transparent 10%,
+    black 25%
+  );
+}
+
+.loader-letter {
+  opacity: 0;
+  animation: letterAnim 4s infinite linear;
+}
+
+@keyframes transformAnimation {
+  0% {
+    transform: translate(-55%);
+  }
+  100% {
+    transform: translate(55%);
+  }
+}
+
+@keyframes opacityAnimation {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 0;
+  }
+}
+
+@keyframes letterAnim {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+    text-shadow: 0 0 4px #fff;
+    transform: scale(1.1) translateY(-2px);
+  }
+  20% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+body , h1, h2, h3, h4, h5, h6, span, div p {
+  font-family: var(--font-futura) !important;
+}

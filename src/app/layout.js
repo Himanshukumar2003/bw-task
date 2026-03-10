@@ -1,8 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ui/theme-provider";
+import { ThemeProvider } from "@/lib/providers/theme-provider";
 import { Navbar } from "@/components/nav";
 import Footer from "@/components/footer";
+import localFont from "next/font/local";
+import LoaderProvider from "@/lib/providers/LoaderProvider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -11,6 +13,32 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const futura = localFont({
+  src: [
+    {
+      path: "../../public/futura/Futura Light font.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/futura/Futura Book font.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/futura/futura medium bt.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/futura/Futura Bold font.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-futura",
 });
 
 export const metadata = {
@@ -22,7 +50,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" theme="dark" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${futura.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -30,8 +58,10 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          {/* <LoaderProvider> */}
           <Navbar></Navbar>
           {children}
+          {/* </LoaderProvider> */}
           <Footer></Footer>
         </ThemeProvider>
       </body>

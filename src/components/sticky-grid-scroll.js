@@ -181,13 +181,12 @@ export default function StickyGridScroll() {
     init();
 
     return () => {
-      // Cleanup on unmount
       scrollTriggerCleanup.forEach((st) => st && st.kill());
       if (lenis) lenis.destroy();
     };
   }, []);
 
-  const images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const images = [1, 2, 3, 5, 4, 6, 7, 8, 9, 10, 11, 12];
 
   return (
     <>
@@ -223,7 +222,7 @@ export default function StickyGridScroll() {
                       width={500}
                       height={500}
                       className="gallery__image  relative z-3  object-contain"
-                      src="/img/2.png"
+                      src={`/img/feachers/${num}.png`}
                       alt={`Image ${num}`}
                     />
                   </li>

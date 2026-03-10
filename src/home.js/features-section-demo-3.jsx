@@ -48,8 +48,9 @@ export default function FeaturesSectionDemo() {
   return (
     <div className="relative z-20  overflow-hidden max-w-7xl mx-auto py-12 ">
       <Heading
-        heading="We Build  Modern"
-        highliter="Web Experiences"
+        heading="How We Make 
+"
+        highliter="Your Life Easy"
         pera="From Image generation to video generation, Everything AI has APIs for literally everything. It can even create this website copy for you."
       />
 
