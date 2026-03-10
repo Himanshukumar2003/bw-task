@@ -25,7 +25,7 @@ export default function page() {
         <div className=""></div>
         <div className="  container  max-w-7xl mx-auto mt-2 px-4  py-12">
           <Heading
-            heading="We Build"
+            heading="We Build Modern"
             highliter="Web Experiences"
             pera="From Image generation to video generation, Everything AI has APIs for literally everything. It can even create this website copy for you."
           />
