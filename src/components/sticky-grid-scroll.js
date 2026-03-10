@@ -221,7 +221,7 @@ export default function StickyGridScroll() {
                     <Image
                       width={500}
                       height={500}
-                      className="gallery__image  relative z-3  object-contain"
+                      className="gallery__image  relative z-3  object-contain  aspect-square"
                       src={`/img/feachers/${num}.png`}
                       alt={`Image ${num}`}
                     />
