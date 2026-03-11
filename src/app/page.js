@@ -12,7 +12,7 @@ import Glow from "@/components/layout/bg-glow";
 export default function page() {
   return (
     <>
-      <div className="w-full relative overflow-hidden bg-white dark:bg-[#0B0B0F] ">
+      <div className="w-full relative overflow-hidden pt-20 dark:bg-[#0B0B0F] ">
         <Glow></Glow>
         <MacbookScroll
           title={<span></span>}

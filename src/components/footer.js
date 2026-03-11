@@ -2,6 +2,7 @@
 import FaqSection from "@/home.js/faqs";
 import React, { useEffect, useRef } from "react";
 import Glow from "./layout/bg-glow";
+import Image from "next/image";
 
 export default function Footer() {
   const mainRef = useRef(null);
@@ -66,9 +67,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
           {/* Left Logo */}
           <div className="flex items-center gap-3">
-            <div>
-              <h2 className="text-2xl font-semibold">BW TASKS</h2>
-            </div>
+            <Image width={200} height={120} src="/logo.png" alt="logo"></Image>
           </div>
 
           {/* Center Contact */}
@@ -111,18 +110,24 @@ export default function Footer() {
         <div className="border-t border-white/10 mb-4"></div>
 
         {/* Copyright */}
-        <div className="text-center text-sm text-gray-400">
-          © 2026 – Prayosha Food Services Pvt. Ltd., India • Privacy •
-          Compliance • Terms • Cancellation & Refund • Escalation Matrix
-        </div>
+        {/* Footer Bottom */}
+        {/* Copyright */}
+        <p className="text-center">
+          © {new Date().getFullYear()}{" "}
+          <span className="font-medium text-gray-300">Bwtasks</span>. All rights
+          reserved.
+        </p>
 
-        {/* Branding Line */}
-        <div className="text-center text-sm text-gray-400 mt-3">
-          Designed & Developed by
-          <span className="ml-1 hover:underline cursor-pointer">
+        {/* Branding */}
+        <p className="text-center">
+          Designed & Developed by{" "}
+          <a
+            href="https://brandingwaale.com/"
+            className="font-medium text-gray-300 hover:text-white transition cursor-pointer"
+          >
             Brandingwaale
-          </span>
-        </div>
+          </a>
+        </p>
       </footer>
     </>
   );
